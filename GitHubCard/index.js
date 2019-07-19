@@ -34,21 +34,34 @@ let gitGrabber = axios
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = ["tetondan", "dustinmyers", "justsml", "luishrd", "bigknell"];
+
+followersArray.forEach(cv => {
+  axios
+    .get(gitpage + cv)
+    .then(response => {
+      return new cardHolder(response);
+    })
+    .catch(error => {
+      console.log("error", error);
+    });
+});
+
+let friendsArray = [];
 let friendGrabber = axios
   .get(gitpage + me + "/followers")
   .then(response => {
     console.log(response);
     return response.data.forEach(cv => {
-      followersArray.push(cv.login);
+      friendsArray.push(cv.login);
     });
   })
   .catch(error => {
     console.log("error", error);
   });
 
-console.log(followersArray);
-console.log(followersArray[1]);
+console.log(friendsArray);
+console.log(friendsArray[1]);
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
