@@ -132,6 +132,10 @@ function cardHolder(obj) {
   let cardBio = document.createElement("p");
   cardBio.textContent = `Bio: ${obj.data.bio}`;
   cardRoom.appendChild(cardBio);
+  let cardExpand = document.createElement("span");
+  cardExpand.textContent = "Open / Close";
+  cardExpand.classList.add("expandButton");
+  cardRoom.appendChild(cardExpand);
 }
 
 /* List of LS Instructors Github username's: 
