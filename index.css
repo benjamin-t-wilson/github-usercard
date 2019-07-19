@@ -181,8 +181,6 @@ body {
   box-shadow: 0 1px 6px -2px #000;
   background-color: #fff;
   margin-bottom: 30px;
-  height: 190px;
-  overflow: hidden;
 }
 
 .card img {
@@ -206,13 +204,18 @@ body {
   font-style: italic;
   margin: 3px 0 10px;
 }
-
-.expandButton {
-  position: absolute;
-  left: 55%;
-  margin-top: 30px;
+.card-info{
+  width: 100%;
 }
-
-.cardOpen {
-  height: 300px;
+.expandButton{
+  display: block;
+  margin: 15px 0;
+  text-align: center;
+  cursor: pointer;
+}
+.cardExt{
+  display: none;
+}
+.cardOpen{
+  display: block;
 }
